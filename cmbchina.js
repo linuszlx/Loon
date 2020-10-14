@@ -1,5 +1,5 @@
 /*
-招商银行信用卡微信公众号：“领积分 - 签到领积分” 获取 Cookie
+招商银行信用卡微信公众号：“领积分 - 🎁签到领积分” 获取 Cookie
 
 [task_local]
 8 0 * * * cmbchina.js
@@ -36,7 +36,7 @@ if (isGetCookie) {
         var userAgent = $request.headers['User-Agent'];
         $prefs.setValueForKey(cookie, cookieKey);
         $prefs.setValueForKey(userAgent, userAgentKey);
-        $notify("成功获取招商银行信用卡 cookie ", "", "请禁用该脚本")
+        $notify("成功获取招商银行信用卡 cookie 🎉", "", "请禁用该脚本")
     }
     $done({});
 } else {
@@ -55,7 +55,7 @@ if (isGetCookie) {
     $task.fetch(request).then(response => {
         const result = JSON.parse(response.body);
         if (result.respCode == 1000) {
-            $notify("招商银行信用卡", "", "签到成功，获得 " + result.data.awardValue + " 积分");
+            $notify("招商银行信用卡", "", "签到成功，获得 " + result.data.awardValue + " 积分🎁");
         } else if (result.respCode == 1452) {
             $notify("招商银行信用卡", "", "签到失败，请获取 cookie");
         } else if (result.respCode == 'custom_8500') {
