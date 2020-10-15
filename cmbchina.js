@@ -20,7 +20,7 @@ function _sign() {
   const token = JSON.parse(tokenVal)
   let url = { url: `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin/request/checkin.json?csrf_token=${token.csrf_token}`, headers: { Cookie: cookieVal }, body:  JSON.stringify({'activityCode' : 'checkin'})
     } 
-  url.headers['Accept'] = `application/json, text/javascript, */*; q=0.01`
+  url.headers['Accept'] = `application/json, text/plain, */*`
   url.headers['Accept-Encoding'] = `gzip, deflate, br`
   url.headers['Origin'] = `https://weclub.ccc.cmbchina.com`
   url.headers['Connection'] = `keep-alive`
