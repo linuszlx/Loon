@@ -7,13 +7,6 @@ let tokenVal = chavy.getdata(tokenKey)
 
 sign()
 
-function sign() {
-  const title = `${cookieName}`
-  const subTitle = `签到脚本可能会导致账号异常, 请暂停使用`
-  const detail = ``
-  chavy.msg(title, subTitle, detail)
-}
-
 function _sign() {
   const token = JSON.parse(tokenVal)
   let url = { url: `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin/request/checkin.json?csrf_token=${token.csrf_token}`, headers: { Cookie: cookieVal }, body:  JSON.stringify({'activityCode' : 'checkin'})
