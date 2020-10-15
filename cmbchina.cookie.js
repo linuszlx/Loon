@@ -1,7 +1,6 @@
 const cookieName = '招商银行'
-const cookieKey = 'iNotificatioin_cmbchina_cookieKey';
-const userAgentKey = 'iNotificatioin_cmbchina_userAgentKey';
-
+const cookieKey = 'chavy_cookie_cmbchina'
+const tokenKey = 'chavy_token_cmbchina'
 const chavy = init()
 const cookieVal = $request.headers['Cookie']
 if (cookieVal) {
@@ -11,15 +10,7 @@ if (cookieVal) {
   }
 }
 
-const userAgentKey =$request.headers['User-Agent']
-if (userAgentVal) {
-  if (chavy.setdata(userAgentVal, userAgentKey)) {
-    chavy.msg(`${userAgentName}`, '获取userAgent: 成功', '')
-    chavy.log(`[${userAgentName}] 获取userAgent: 成功, userAgent: ${userAgentVal}`)
-  }
-}
-
-
+const queryparam = $request.url.split('?')[1]
 if (queryparam) {
   const params = {}
   for (param of $request.url.split('?')[1].split('&')) {
@@ -31,6 +22,7 @@ if (queryparam) {
     chavy.log(`[${cookieName}] 获取Token: 成功, token: ${token}`)
   }
 }
+
 function init() {
   isSurge = () => {
     return undefined === this.$httpClient ? false : true
