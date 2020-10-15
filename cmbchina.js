@@ -1,5 +1,3 @@
-/*
-招商银行信用卡微信公众号：“领积分 - 🎁签到领积分” 获取 Cookie
 const cookieName = '招商银行'
 const cookieKey = 'chavy_cookie_cmbchina'
 const tokenKey = 'chavy_token_cmbchina'
