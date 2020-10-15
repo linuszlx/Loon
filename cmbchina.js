@@ -20,9 +20,9 @@ if (isGetCookie) {
         var cookie = $request.headers['Cookie'];
         var userAgent = $request.headers['User-Agent'];
         $persistentStore.write(cookie, cookieKey);
-        //$prefs.setValueForKey(cookie, cookieKey);
+        $prefs.setValueForKey(cookie, cookieKey);
         $persistentStore.write(userAgent, userAgentKey);
-        //$prefs.setValueForKey(userAgent, userAgentKey);
+        $prefs.setValueForKey(userAgent, userAgentKey);
         $notification.post("成功获取招商银行信用卡 cookie 🎉", "", "");
     } else {
         $notification.post("获取招商银行信用卡 cookie 失败😭", "", "");
