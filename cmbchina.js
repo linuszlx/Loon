@@ -37,6 +37,7 @@ function _sign() {
     }
     chavy.msg(title, subTitle, detail)
   })
+  chavy.done()
 }
 
 function init() {
