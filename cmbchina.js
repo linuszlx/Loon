@@ -1,70 +1,96 @@
 /*
 招商银行信用卡微信公众号：“领积分 - 🎁签到领积分” 获取 Cookie
+const cookieName = '招商银行'
+const cookieKey = 'chavy_cookie_cmbchina'
+const tokenKey = 'chavy_token_cmbchina'
+const chavy = init()
+let cookieVal = chavy.getdata(cookieKey)
+let tokenVal = chavy.getdata(tokenKey)
 
-[task_local]
-8 0 * * * cmbchina.js
+sign()
 
-[rewrite_local]
-https://weclub\.ccc\.cmbchina.com/SCRMCustomActivityFront/checkin/request/get-home-data\.json\?activityCode=checkin url script-request-header cmbchina.js
-
-[mitm]
-hostname = weclub.ccc.cmbchina.com
-*/
-
-/******************** 转换器 ********************/
-let isQuantumultX=$task!=undefined;let isSurge=$httpClient!=undefined;let isLoon=isSurge&&typeof $loon!=undefined;var $task=isQuantumultX?$task:{};var $httpClient=isSurge?$httpClient:{};var $prefs=isQuantumultX?$prefs:{};var $persistentStore=isSurge?$persistentStore:{};var $notify=isQuantumultX?$notify:{};var $notification=isSurge?$notification:{};if(isQuantumultX){var errorInfo={error:"",};$httpClient={get:(url,cb)=>{var urlObj;if(typeof url=="string"){urlObj={url:url,}}else{urlObj=url}
-$task.fetch(urlObj).then((response)=>{cb(undefined,response,response.body)},(reason)=>{errorInfo.error=reason.error;cb(errorInfo,response,"")})},post:(url,cb)=>{var urlObj;if(typeof url=="string"){urlObj={url:url,}}else{urlObj=url}
-url.method="POST";$task.fetch(urlObj).then((response)=>{cb(undefined,response,response.body)},(reason)=>{errorInfo.error=reason.error;cb(errorInfo,response,"")})},}}
-if(isSurge){$task={fetch:(url)=>{return new Promise((resolve,reject)=>{if(url.method=="POST"){$httpClient.post(url,(error,response,data)=>{if(response){response.body=data;resolve(response,{error:error,})}else{resolve(null,{error:error,})}})}else{$httpClient.get(url,(error,response,data)=>{if(response){response.body=data;resolve(response,{error:error,})}else{resolve(null,{error:error,})}})}})},}}
-if(isQuantumultX){$persistentStore={read:(key)=>{return $prefs.valueForKey(key)},write:(val,key)=>{return $prefs.setValueForKey(val,key)},}}
-if(isSurge){$prefs={valueForKey:(key)=>{return $persistentStore.read(key)},setValueForKey:(val,key)=>{return $persistentStore.write(val,key)},}}
-if(isQuantumultX){$notify=((notify)=>{return function(title,subTitle,detail,url=undefined){detail=url===undefined?detail:`${detail}\n点击链接跳转: ${url}`;notify(title,subTitle,detail)}})($notify);$notification={post:(title,subTitle,detail,url=undefined)=>{detail=url===undefined?detail:`${detail}\n点击链接跳转: ${url}`;$notify(title,subTitle,detail)},}}
-if(isSurge&&!isLoon){$notification.post=((notify)=>{return function(title,subTitle,detail,url=undefined){detail=url===undefined?detail:`${detail}\n点击链接跳转: ${url}`;notify.call($notification,title,subTitle,detail)}})($notification.post);$notify=(title,subTitle,detail,url=undefined)=>{detail=url===undefined?detail:`${detail}\n点击链接跳转: ${url}`;$notification.post(title,subTitle,detail)}}
-if(isLoon){$notify=(title,subTitle,detail,url=undefined)=>{$notification.post(title,subTitle,detail,url)}}
-/******************** 转换器 ********************/
-
-const checkinURL = 'https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin/request/checkin.json';
-const cookieKey = 'iNotificatioin_cmbchina_cookieKey';
-const userAgentKey = 'iNotificatioin_cmbchina_userAgentKey';
-
-let isGetCookie = typeof $request !== 'undefined';
-
-if (isGetCookie) {
-    // 获取 Cookie
-    if ($request.headers['Cookie']) {
-        var cookie = $request.headers['Cookie'];
-        var userAgent = $request.headers['User-Agent'];
-        $prefs.setValueForKey(cookie, cookieKey);
-        $prefs.setValueForKey(userAgent, userAgentKey);
-        $notify("成功获取招商银行信用卡 cookie 🎉", "", "请禁用该脚本")
-    }
-    $done({});
-} else {
-    // 签到
-    var request = {
-        url: checkinURL,
-        method: 'POST',
-        headers: {
-            'Cookie': $prefs.valueForKey(cookieKey),
-            'User-Agent': $prefs.valueForKey(userAgentKey),
-            'Content-type' : 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({'activityCode' : 'checkin'})
-    };
-
-    $task.fetch(request).then(response => {
-        const result = JSON.parse(response.body);
-        if (result.respCode == 1000) {
-            $notify("招商银行信用卡", "", "签到成功，获得 " + result.data.awardValue + " 积分🎁");
-        } else if (result.respCode == 1452) {
-            $notify("招商银行信用卡", "", "签到失败，请获取 cookie");
-        } else if (result.respCode == 'custom_8500') {
-            $notify("招商银行信用卡", "", "签到失败，" + result.respMsg);
-        } else {
-            $notify("招商银行信用卡", "", "签到失败，请查看日志");
-            console.log(response.body)
-        }
-    }, reason => {
-        $notify("招商银行信用卡", "", reason.error)
-    });
+function sign() {
+  const title = `${cookieName}`
+  const subTitle = `签到脚本可能会导致账号异常, 请暂停使用`
+  const detail = ``
+  chavy.msg(title, subTitle, detail)
 }
+
+function _sign() {
+  const token = JSON.parse(tokenVal)
+  let url = { url: `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin/request/checkin.json?csrf_token=${token.csrf_token}`, headers: { Cookie: cookieVal }, body:  JSON.stringify({'activityCode' : 'checkin'})
+    } 
+  url.headers['Accept'] = `application/json, text/javascript, */*; q=0.01`
+  url.headers['Accept-Encoding'] = `gzip, deflate, br`
+  url.headers['Origin'] = `https://weclub.ccc.cmbchina.com`
+  url.headers['Connection'] = `keep-alive`
+  url.headers['Host'] = `weclub.ccc.cmbchina.com`
+  url.headers['Content-Length'] = `26`
+  url.headers['User-Agent'] = ` Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.13(0x17000d2a) NetType/4G Language/zh_CN`
+  url.headers['Referer'] = `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin`
+
+  chavy.post(url, (error, response, data) => {
+    chavy.log(`${cookieName}, data: ${data}`)
+    const result = JSON.parse(data)
+    const title = `${cookieName}`
+    let subTitle = ``
+    let detail = ``
+    if (result.code == '1000') {
+      subTitle = `签到结果: 成功`
+      detail = `积分: ${result.data.point}`
+    } else if (result.code == '1452') {
+      subTitle = `签到失败: 请获取cookie`
+      detail = `说明: ${result.errorCode}`
+    } else {
+      subTitle = `签到失败: 未知`
+      detail = `编码: ${result.code}, 说明: ${result.errorCode}`
+    }
+    chavy.msg(title, subTitle, detail)
+  })
+  chavy.done()
+}
+
+function init() {
+  isSurge = () => {
+    return undefined === this.$httpClient ? false : true
+  }
+  isQuanX = () => {
+    return undefined === this.$task ? false : true
+  }
+  getdata = (key) => {
+    if (isSurge()) return $persistentStore.read(key)
+    if (isQuanX()) return $prefs.valueForKey(key)
+  }
+  setdata = (key, val) => {
+    if (isSurge()) return $persistentStore.write(key, val)
+    if (isQuanX()) return $prefs.setValueForKey(key, val)
+  }
+  msg = (title, subtitle, body) => {
+    if (isSurge()) $notification.post(title, subtitle, body)
+    if (isQuanX()) $notify(title, subtitle, body)
+  }
+  log = (message) => console.log(message)
+  get = (url, cb) => {
+    if (isSurge()) {
+      $httpClient.get(url, cb)
+    }
+    if (isQuanX()) {
+      url.method = 'GET'
+      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
+    }
+  }
+  post = (url, cb) => {
+    if (isSurge()) {
+      $httpClient.post(url, cb)
+    }
+    if (isQuanX()) {
+      url.method = 'POST'
+      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
+    }
+  }
+  done = (value = {}) => {
+    $done(value)
+  }
+  return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
+}
+
