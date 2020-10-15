@@ -37,7 +37,7 @@ function _sign() {
     let detail = ``
     if (result.code == '1000') {
       subTitle = `签到结果: 成功`
-      detail = `积分: ${result.data.point}`
+      detail = `积分: ${result.data.awardValue + " 积分🎁"}`
     } else if (result.code == '1452') {
       subTitle = `签到失败: 请获取cookie`
       detail = `说明: ${result.errorCode}`
