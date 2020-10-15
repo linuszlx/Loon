@@ -20,14 +20,6 @@ function _sign() {
   const token = JSON.parse(tokenVal)
   let url = { url: `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin/request/checkin.json?csrf_token=${token.csrf_token}`, headers: { Cookie: cookieVal }, body:  JSON.stringify({'activityCode' : 'checkin'})
     } 
-  url.headers['Accept'] = `application/json, text/plain, */*`
-  url.headers['Accept-Encoding'] = `gzip, deflate, br`
-  url.headers['Origin'] = `https://weclub.ccc.cmbchina.com`
-  url.headers['Connection'] = `keep-alive`
-  url.headers['Host'] = `weclub.ccc.cmbchina.com`
-  url.headers['Content-Length'] = `26`
-  url.headers['User-Agent'] = ` Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.13(0x17000d2a) NetType/4G Language/zh_CN`
-  url.headers['Referer'] = `https://weclub.ccc.cmbchina.com/SCRMCustomActivityFront/checkin`
 
   chavy.post(url, (error, response, data) => {
     chavy.log(`${cookieName}, data: ${data}`)
