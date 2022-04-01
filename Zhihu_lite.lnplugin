@@ -9,7 +9,6 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 DOMAIN,appcloud2.in.zhihu.com,REJECT
 DOMAIN,mqtt.zhihu.com,REJECT
 USER-AGENT,AVOS*,REJECT
-URL-REGEX,^https?:\/\/sugar\.zhihu\.com,REJECT
 # 知乎拦截部分预加载
 URL-REGEX,^https?:\/\/www\.zhihu\.com\/appview\/(p|v2\/answer|zvideo)\/.*entry=(preload-topstory|preload-search|preload-subscription),REJECT
 # 拦截知乎品牌提问广告
@@ -17,6 +16,8 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\?,REJECT
 URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\?,REJECT
 
 [URL Rewrite]
+# 知乎补充
+^https?:\/\/sugar\.zhihu\.com - reject-dict
 # 知乎去除最常访问
 ^https?:\/\/api\.zhihu\.com\/moments\/recent - reject-dict
 # 知乎去除回答下的广告
