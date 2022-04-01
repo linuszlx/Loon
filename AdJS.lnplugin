@@ -1,0 +1,48 @@
+补充去广告
+
+[Rule]
+
+
+[URL Rewrite]
+#有道云笔记
+^https?:\/\/advert\.lx\.netease\.com\/api\/open\/advertOpen - reject-dict
+# 飞客茶馆
+^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis url reject
+^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo url reject
+
+[Script]
+#米家优化
+http-response ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/exploreTab requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Mi/MiTab.js,tag=米家_发现页面去广告
+http-response ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Mi/MiAD.js,tag=米家_推荐去广告
+#有道云笔记
+http-response ^https?:\/\/silk\.lx\.netease\.com\/api\/open\/advertOpen requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/NeteaseNote/NeteaseNoteAd.js,tag=有道云笔记_去广告
+# 去微信公众号广告 (By Choler)
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js,tag=微信_去广告
+# 京东优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_开屏去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=myOrderInfo requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_订单页面去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=orderTrackBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_物流页面去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=welcomeHome requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_OpenPage.js,tag=京东_首页优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=uniformRecommend requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_Recommend.js,tag=京东_推荐优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getRecommendNewFeedsList requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_NewFeedsList.js,tag=京东_推荐信息流优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=discFollowEnterMainPage requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_FollowPage.js,tag=京东_发现页面屏蔽
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_PersonPage.js,tag=京东_个人页面优化
+# 什么值得买优化
+http-response ^https?:\/\/app-api\.smzdm\.com\/util\/loading script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_开屏去广告
+http-response ^https?:\/\/homepage-api\.smzdm\.com\/v3\/home script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_首页去广告
+http-response ^https?:\/\/haojia-api\.smzdm\.com\/home\/list script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_好价去广告
+http-response ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_好价详情页去广告
+http-response ^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_百科去广告
+http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_搜索结果去广告
+http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_搜索标签去广告
+http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_值会员权益中心banner广告
+http-response ^https?:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Smzdm/Smzdm_RemoveAD.js, requires-body=true, timeout=10, tag=什么值得买_页面广告
+# 开屏广告优化
+http-response ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Startup/Startup.js
+http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Startup/Startup.js
+# 飞客茶馆
+http-response ^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=5&mobile=yes&module=basicdata&type=forumlist requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/FlyTea/FlyTea_AS.js
+http-response ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1 requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/FlyTea/FlyTea_AD.js
+
+[MITM]
+hostname =  mp.weixin.qq.com, aweme*.snssdk.com, *.amemv.com, api.m.jd.com, app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, post.m.smzdm.com, s-api.smzdm.com, user-api.smzdm.com, 47.100.65.202, 211.144.24.231, 111.13.29.201, home.mi.com ,advert.lx.netease.com, silk.lx.netease.com
