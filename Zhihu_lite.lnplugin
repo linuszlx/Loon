@@ -17,7 +17,7 @@ URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\?,REJ
 # 知乎补充
 ^https?:\/\/sugar\.zhihu\.com - reject-dict
 # 知乎去除回答下的广告
-^https?:\/\/www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations - reject
+^https?:\/\/www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations - reject-dict
 # 知乎拦截其他广告
 ^https?:\/\/api\.zhihu\.com\/(v3\/package|me\/guides|drama\/living-info|ad|fringe|commercial|market\/popovers|.*featured-comment-ad) - reject-dict
 # 知乎品牌提问广告
