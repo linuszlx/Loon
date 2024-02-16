@@ -111,21 +111,14 @@ https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_remov
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TubeMax_remove_ads.plugin, policy = 香港, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/AliYunDrive_remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Amap_remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BaiduNetDisk_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Himalaya_remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QiDian_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Umetrip_remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/NeteaseNews_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Remove_ads_by_keli.plugin, enabled = true
 https://raw.githubusercontent.com/linuszlx/Loon/main/Bilibili.lnplugin, enabled = true
 https://raw.githubusercontent.com/linuszlx/Loon/main/AdJS.lnplugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Baidu_input_method_remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/NeteaseCloudMusic_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/smzdm_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weixin_Official_Accounts_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/WexinMiniPrograms_Remove_ads.plugin, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BaiduSearchWebpage_remove_ads.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BingAI.plugin, policy = 日本, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/JD_Price.plugin, enabled = true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QuickSearch.plugin, enabled = true
