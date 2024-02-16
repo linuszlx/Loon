@@ -40,6 +40,7 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 韩国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\d{0,2}\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 新国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\d{0,2}\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 美国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\d{0,2}\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+俄国节点 = NameRegex, FilterKey = "^(?=.*((?i🇷🇺|俄罗斯|俄|(\b(RU|Russia)\d{0,2}\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 
 [Proxy Group]
 # 延时优选策略组
@@ -49,9 +50,10 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 韩国 = url-test, 韩国节点, url = http://www.apple.com/library/test/success.html, interval = 60, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
 新国 = url-test, 新国节点, url = http://www.apple.com/library/test/success.html, interval = 60, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
 美国 = url-test, 美国节点, url = http://www.apple.com/library/test/success.html, interval = 60, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+俄国 = url-test, 俄国节点, url = http://www.apple.com/library/test/success.html, interval = 60, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/RU.png
 # --------------------------------
 # 手动策略组
-游戏手动 = select, 游戏节点, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+游戏手动 = select, 游戏节点, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/GAME.png
 全球手动 = select, 全球节点, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
 
 [Rule]
@@ -68,24 +70,19 @@ FINAL, 香港
 
 [Remote Rule]
 https://adrules.top/adrules.list, policy = REJECT, tag = AdRules, enabled = true
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Telegram/Telegram.list, policy = 香港, tag = Telegram, enabled = true
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/TikTok/TikTok.list, policy = 日本, tag = TikTok, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/OpenAI.list, policy = 美国, tag = Open AI, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/ApplePushNotificationService.list, policy = DIRECT, tag = Apple Push Notification Service, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AppleID.list, policy = DIRECT, tag = Apple ID, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AppStore.list, policy = DIRECT, tag = App Store, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/GitHub/GitHub.list, policy = 香港, tag = GitHub, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Netflix/Netflix.list, policy = 新国, tag = Netflix, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/YouTube/YouTube.list, policy = 香港, tag = Youtube, enabled = true
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Disney/Disney.list, policy = 香港, tag = Disney, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Twitter/Twitter.list, policy = 香港, tag = Twitter, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Facebook/Facebook.list, policy = 香港, tag = Facebook, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Instagram/Instagram.list, policy = 美国, tag = Instagram, enabled = true
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Spotify/Spotify.list, policy = 香港, tag = Spotify, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/Google/Google.list, policy = 香港, tag = Google, enabled = false
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/OneDrive/OneDrive.list, policy = 香港, tag = OneDrive, enabled = false
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/LAN, policy = DIRECT, tag = LAN, enabled = true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/CN_REGION, policy = DIRECT, tag = CN REGION, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/Telegram.list, policy = 香港, tag = Telegram, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/TikTok.list, policy = 日本, tag = TikTok, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/OpenAI.list, policy = 美国, tag = Open AI, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/ApplePushNotificationService.list, policy = DIRECT, tag = Apple Push Notification Service, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/AppleID.list, policy = DIRECT, tag = Apple ID, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/AppStore.list, policy = DIRECT, tag = App Store, enabled = false
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/GitHub.list, policy = 香港, tag = GitHub, enabled = false
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/YouTube.list, policy = 香港, tag = Youtube, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/Twitter.list, policy = 香港, tag = Twitter, enabled = false
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/Google.list, policy = 香港, tag = Google, enabled = false
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/OneDrive.list, policy = 香港, tag = OneDrive, enabled = false
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/LAN.list, policy = DIRECT, tag = LAN, enabled = true
+https://raw.githubusercontent.com/linuszlx/Loon/main/Filter/CN_REGION.list, policy = DIRECT, tag = CN REGION, enabled = true
 
 [Host]
 
