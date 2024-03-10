@@ -1,0 +1,25 @@
+#!name = 京东去广告
+#!desc = 移除京东开屏广告，精简我的页面产品推广。
+#!openUrl = 
+#!author = linusz
+#!homepage = https://github.com/linuszlx/Loon
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JD.png
+#!date = 2024-01-23 09:50:15
+[Rule]
+DOMAIN, dns.jd.com, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+
+[Script]
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_开屏去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=myOrderInfo requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_订单页面去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=orderTrackBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_物流页面去广告
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=welcomeHome requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_OpenPage.js,tag=京东_首页优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=uniformRecommend requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_Recommend.js,tag=京东_推荐优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getRecommendNewFeedsList requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_NewFeedsList.js,tag=京东_推荐信息流优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=discFollowEnterMainPage requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_FollowPage.js,tag=京东_发现页面屏蔽
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_PersonPage.js,tag=京东_个人页面优化
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_DNS.js,tag=京东_DNS屏蔽
+[Mitm]
+hostname = api.m.jd.com, 47.100.65.202, 211.144.24.231, 111.13.29.201,120.52.30.123, 106.39.170.200, 120.52.148.150,120.52.148.64, 106.39.169.231, 111.13.24.98, 120.52.148.120, 39.156.62.242, 120.52.30.130, 106.39.171.220, 36.110.181.150, 106.39.170.31, 106.39.171.84
