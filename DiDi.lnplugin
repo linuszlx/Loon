@@ -1,0 +1,25 @@
+#!name = 滴滴去广告
+#!desc = 移除滴滴开屏广告，精简我的页面产品推广。
+#!openUrl = 
+#!author = RuCu6
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
+#!icon = 
+#!date = 2024-01-23 09:50:15
+
+[Rule]T
+
+[Rewrite]
+^https?:\/\/hd\.xiaojukeji\.com reject-dict
+
+[Script]
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/ requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/dynamic.js,tag=滴滴去广告
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core\? requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/page.js,tag=滴滴下栏优化
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/dynamic.js,tag=滴滴去广告
+http-response ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\? requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/dynamic.js,tag=滴滴去广告
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/nav\/widget\? requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/dynamic.js,tag=滴滴去广告
+http-response ^https?:\/\/guard\.sec\.xiaojukeji\.com\/api\/guard\/psg\/v2\/getShieldStatus requires-body=1,script-path= https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/dynamic.js,tag=滴滴去广告
+http-response ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/me\?  requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/DiDi/PersonPage.js,tag=滴滴个人页去广告
+
+
+[Mitm]
+hostname = hd.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, guard.sec.xiaojukeji.com, common.diditaxi.com.cn
