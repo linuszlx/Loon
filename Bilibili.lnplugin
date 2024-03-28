@@ -37,9 +37,8 @@ http-response ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.pol
 http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/BiliUniverse/ADBlock/main/js/BiliBili.ADBlock.response.js, tag=BiliBili.ADBlock.response.grpc, argument=
 http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/BiliUniverse/ADBlock/main/js/BiliBili.ADBlock.response.js, tag=BiliBili.ADBlock.response.grpc, argument=
 http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/BiliUniverse/ADBlock/main/js/BiliBili.ADBlock.response.js, tag=BiliBili.ADBlock.response.grpc, argument=
-http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\? requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.resource.show.tab.v2, argument=
-http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\? requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.v2.account.mine, argument=
+http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.resource.show.tab.v2
+http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.v2.account.mine
 
 [MitM]
 hostname = manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
-h2 = true
