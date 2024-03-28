@@ -1,12 +1,16 @@
 #!name = 滴滴去广告
 #!desc = 移除滴滴开屏广告，精简我的页面产品推广。
 #!openUrl = 
-#!author = RuCu6
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
+#!author = linusz
+#!homepage = 
 #!icon = 
-#!date = 2024-01-23 09:50:15
+#!date = 2024-01-23
 
-[Rule]T
+[Rule]
+IP-CIDR,139.199.240.12/32,REJECT
+IP-CIDR,139.199.240.15/32,REJECT
+IP-CIDR,123.207.209.39/32,REJECT
+IP-CIDR,123.207.209.60/32,REJECT
 
 [Rewrite]
 ^https?:\/\/hd\.xiaojukeji\.com reject-dict
