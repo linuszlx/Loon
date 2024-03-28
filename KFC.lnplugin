@@ -1,16 +1,12 @@
-#!name = 京东去广告
-#!desc = 移除京东开屏广告，精简我的页面产品推广。
+#!name = KFC去广告
+#!desc = 移除KFC开屏广告，精简页面。
 #!openUrl = 
 #!author = RuCu6
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
-#!icon = 
+#!icon = blob:https://github.com/f48d3d22-3d95-4d05-a4c9-1447ef57ee1b
 #!date = 2024-01-23 09:50:15
 
 [Rule]
-DOMAIN, dns.jd.com, REJECT
-IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
-IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
-URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
 
 [Rewrite]
 ^https?:\/\/abplatform\.yumchina\.com\/abtestplatform\/api\/abtest\/kfc\/adRouter reject-dict
