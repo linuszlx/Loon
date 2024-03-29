@@ -2,8 +2,8 @@
 #!desc = 移除各类App广告。
 #!openUrl = 
 #!author = linusz
-#!homepage = 
-#!icon = https://avatars.githubusercontent.com/u/26337951
+#!homepage = https://github.com/linuszlx/Loon/main/Advertising.lnplugin
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Adblocker.webp
 #!date = 2024-01-23
 
 [Rewrite]
