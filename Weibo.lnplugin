@@ -9,6 +9,13 @@
 [Rule]
 # > 微博_请手动添加以下分流至本地
 DOMAIN-SUFFIX,sdkapp.uve.weibo.com,DIRECT
+# 请求拦截
+# weibo http-dns
+DOMAIN,dns.weibo.cn,reject
+IP-CIDR,39.97.128.148/32,reject
+IP-CIDR,39.97.130.51/32,reject
+# 请求拦截
+DOMAIN-SUFFIX, biz.weibo.com,reject
 
 [URL Rewrite]
 # > 微博_应用内弹窗广告@ddgksf2013 header
