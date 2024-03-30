@@ -11,11 +11,11 @@
 DOMAIN-SUFFIX,sdkapp.uve.weibo.com,DIRECT
 # 请求拦截
 # weibo http-dns
-DOMAIN,dns.weibo.cn,reject
-IP-CIDR,39.97.128.148/32,reject,no-resplve
-IP-CIDR,39.97.130.51/32,reject,no-resplve
+DOMAIN,dns.weibo.cn,REJECT
+IP-CIDR,39.97.128.148/32,REJECT,no-resolve
+IP-CIDR,39.97.130.51/32,REJECT,no-resolve
 # 请求拦截
-DOMAIN-SUFFIX, biz.weibo.com,reject
+DOMAIN-SUFFIX, biz.weibo.com, REJECT
 
 [URL Rewrite]
 # > 微博_应用内弹窗广告@ddgksf2013 header
