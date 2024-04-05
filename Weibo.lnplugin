@@ -15,8 +15,8 @@ DOMAIN-SUFFIX, biz.weibo.com, REJECT
 # 请求拦截
 # weibo http-dns
 DOMAIN,dns.weibo.cn,REJECT
-IP-CIDR,39.97.128.148/32,no-resolve,REJECT
-IP-CIDR,39.97.130.51/32,no-resolve,REJECT
+IP-CIDR,39.97.128.148/32,REJECT,no-resolve
+IP-CIDR,39.97.130.51/32,REJECT,no-resolve
 
 
 [URL Rewrite]
