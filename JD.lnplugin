@@ -16,8 +16,6 @@ http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start requ
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=myOrderInfo requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_订单页面去广告
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=orderTrackBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_ADRemove.js,tag=京东_物流页面去广告
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=welcomeHome requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_OpenPage.js,tag=京东_首页优化
-#http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=uniformRecommend requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_Recommend.js,tag=京东_推荐优化
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getRecommendNewFeedsList requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_NewFeedsList.js,tag=京东_推荐信息流优化
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=discFollowEnterMainPage requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_FollowPage.js,tag=京东_发现页面屏蔽
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_PersonPage.js,tag=京东_个人页面优化
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-Optimize/JD_DNS.js,tag=京东_DNS屏蔽
