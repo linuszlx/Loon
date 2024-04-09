@@ -8,7 +8,7 @@
 
 [Rewrite]
 # 财新数据通
-^https:\/\/entities\.caixin\.com\/api\/public\/(push\/appIndex|recommendNews) reject-dict
+#^https:\/\/entities\.caixin\.com\/api\/public\/(push\/appIndex|recommendNews) reject-dict
 # 广告样式
 ^https:\/\/gateway\.caixin\.com\/api\/app-api\/cxAdInfo\/selectIndexAdInfo reject-dict
 ^https:\/\/mappsv5\.caixin\.com\/channelv5\/article_ad_ios_info reject-dict
