@@ -248,8 +248,8 @@
 ^https?:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time reject
 
 # > 芒果TV
-# hostname = xo.da.mgtv.com
-^https?:\/\/xo\.da\.mgtv\.com\/json\/app\/boot reject
+# hostname = ox.da.mgtv.com
+^https?:\/\/ox\.da\.mgtv\.com\/json\/app\/boot reject
 
 # > 马蜂窝
 # hostname = mapi.mafengwo.cn
