@@ -53,7 +53,6 @@
 # > 大众点评
 # hostname = img.meituan.net
 # 开屏广告
-^https?:\/\/img\.meituan\.net\/dpmobile\/.*\.webp reject-dict
 ^https?:\/\/img\.meituan\.net\/dpmobile\/.*\.png.webp reject-dict
 ^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) reject-200
 
