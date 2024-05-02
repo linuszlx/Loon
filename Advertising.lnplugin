@@ -54,7 +54,8 @@
 # hostname = img.meituan.net
 # 开屏广告
 ^https?:\/\/img\.meituan\.net\/dpmobile\/^.{38,38}$\.png.webp reject-dict
-^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) reject-200
+^https?:\/\/img\.meituan\.net\/dpmobile\/^.{38,38}$\.jpg.webp reject-200
+^https?:\/\/img\.meituan\.net\/dpmobile\/.*.gif reject-200
 
 # > 动卡空间
 # hostname = ump.sz.creditcard.ecitic.com
