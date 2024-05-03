@@ -1,12 +1,11 @@
 #!name=Bilibili去广告
 #!desc=哔哩哔哩：去广告
-#!openUrl=http://boxjs.com/#/app/BiliBili.ADBlock
-#!author=ClydeTime
-#!references=VirgilClyne、app2smile、RuCu6、Maasea
-#!homepage=https://adblock.biliuniverse.io
-#!manual=https://manual.biliuniverse.io
+#!openUrl=
+#!author=linusz
+#!homepage=
+#!manual=
 #!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_rounded.png
-#!date = 2024-03-28
+#!date = 2024-05-04
 
 [Rewrite]
 
