@@ -1,0 +1,36 @@
+#!name=Bilibili去广告
+#!desc=哔哩哔哩：去广告
+#!openUrl=http://boxjs.com/#/app/BiliBili.ADBlock
+#!author=ClydeTime
+#!references=VirgilClyne、app2smile、RuCu6、Maasea
+#!homepage=https://adblock.biliuniverse.io
+#!manual=https://manual.biliuniverse.io
+#!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_rounded.png
+#!date = 2024-03-28
+
+[Rewrite]
+
+[Script]
+http-request 
+
+# 标签页处理
+^https?:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/resource\/show\/tab requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_HP.js, tag = 标签页处理
+# 分区优化
+^https?:\/\/app\.bilibili\.com\/x\/v2\/channel\/region\/list\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_FQ.js, tag = 分区优化
+# 去除皮肤
+^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_PF.js, tag = 去除皮肤
+# 页面优化
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_home.js, tag = 页面优化
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/movie\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_cinema.js, tag = 页面优化
+
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?actionKey=appkey&ad_extra= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 页面优化
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?access_key= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 页面优化
+
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?actionKey=appkey&ad_extra= requires-body=true, script-path= https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 页面优化
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?access_key requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 页面优化
+# 修改页面繁体
+^https?:\/\/app\.bilibili\.com\/x\/v2\/region\/index\?actionKey=appkey&appkey= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_YH.js, tag = 修改页面繁体
+^https?:\/\/app\.bilibili\.com\/x\/v2\/region\/index\?access_key= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_YH.js, tag = 修改页面繁体
+
+[MitM]
+hostname =  app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
