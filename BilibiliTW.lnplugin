@@ -18,14 +18,14 @@ http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/channel\/region\/list\? req
 # 去除皮肤
 http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_PF.js, tag = 去除皮肤
 # 页面优化
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_home.js, tag = 页面优化
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/movie\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_cinema.js, tag = 页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_home.js, tag = 番剧页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/movie\? requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_cinema.js, tag = 电影页面优化
 
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?actionKey=appkey&ad_extra= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 页面优化
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?access_key= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?actionKey=appkey&ad_extra= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 电影页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\?access_key= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc.js, tag = 电影页面优化
 
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?actionKey=appkey&ad_extra= requires-body=true, script-path= https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 页面优化
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?access_key requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?actionKey=appkey&ad_extra= requires-body=true, script-path= https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 番剧页面优化
+http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/\?access_key requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_pgc_tab.js, tag = 番剧页面优化
 # 修改页面繁体
 http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/region\/index\?actionKey=appkey&appkey= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_YH.js, tag = 修改页面繁体
 http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/region\/index\?access_key= requires-body=true, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili_YH.js, tag = 修改页面繁体
