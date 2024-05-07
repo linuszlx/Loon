@@ -51,7 +51,7 @@ http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main
 
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili优化主体页面
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili优化个人页面
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, requires-body = true, tag =BiliBili移除右上角活动入口
+http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity\? script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, requires-body = true, tag =BiliBili移除右上角活动入口
 
 [MitM]
 hostname = manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
