@@ -127,10 +127,11 @@
 ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis reject
 ^https?:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=advis.* reject
 ^https?:\/\/www\.flyert\.com\.cn\/source\/plugin\/mobile\/mobile\.php\?module=advis.* reject
-^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/source\/plugin\/mobile\/mobile\.php\?module=advis.* reject
+^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=advis.* reject
 ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\.cn\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
+^https?:\/\/www\.flyert\.com\/api\/mobile\/index\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 
 # > 发现精彩
