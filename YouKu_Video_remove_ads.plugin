@@ -1,5 +1,5 @@
 #!name = 优酷视频去广告
-#!desc = 过滤优酷视频客户端广告，由于此插件不再维护，客户端版本高于11.0.48可能会导致此插件失效，请勿升级客户端。
+#!desc = 高于11.0.48可能会导致此失效。
 #!openUrl = 
 #!author = RuCu6
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
