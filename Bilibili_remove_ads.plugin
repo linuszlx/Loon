@@ -76,4 +76,4 @@ http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/skin\
 http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/(mine\?|mine\/ipad\?) script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/json.js, requires-body = true, tag = 精简我的页面
 
 [MitM]
-hostname = app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
+hostname = manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
