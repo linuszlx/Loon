@@ -54,6 +54,8 @@
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome reject-200
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get reject-200
 ^https?:\/\/img\.alicdn\.com\/imgextra\/i1\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-1080-1920.jpg reject-200
 ^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-1080-1920.jpg reject-200
 # > 大众点评
 # hostname = img.meituan.net
