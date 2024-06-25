@@ -40,6 +40,7 @@ http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.resource.show.tab.v2, argument=
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\? requires-body=1, script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, tag=BiliBili.Enhanced.x.v2.account.mine, argument=
 http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity\? requires-body=1, script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/Bili.js, requires-body = true, tag =BiliBili.Enhanced., argument=
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$ requires-body=1, script-path = https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js, requires-body = true, tag =BiliBili.Enhanced., argument=
 [MitM]
 hostname = manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
 h2 = true
