@@ -57,6 +57,7 @@ http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teena
 # 移除开屏广告
 http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/json.js, requires-body = true, tag = 移除开屏广告
 # 移除首页推荐广告
+http-request ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\? requires-body=0, script-path=https://raw.githubusercontent.com/BiliUniverse/ADBlock/main/js/BiliBili.ADBlock.request.js, tag=移除首页推荐广告, argument=
 http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\? script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/json.js, requires-body = true, tag = 移除首页推荐广告
 # 移除右上角活动入口
 http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity\? script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/json.js, requires-body = true, tag = 移除右上角活动入口
