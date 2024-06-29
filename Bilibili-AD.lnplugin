@@ -1,80 +1,38 @@
-#!name = Bilibili去广告
-#!desc = 过滤Bilibili广告、移除青少年模式弹窗、移除无用功能。
-#!openUrl = 
-#!author = ddgksf2021 BiliUniverse bm7
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
+#!name = 哔哩哔哩
+#!desc = 没有广告的哔哩哔哩更值得干杯
+#!author = RuCu6 Maasea
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Bilibili.png
-#!date = 2024-05-30
-
-
-
+#!update = 2024-06-24 18:35
 
 [Rewrite]
-# ======= BiliJson 播放页处理 ======= #
-# ～ BiliBili_哔哩哔哩_屏蔽广告浮窗@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive reject-dict
-# ～ BiliBili_哔哩哔哩_Material_Ad@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report reject-dict
-# ～ BiliBili_哔哩哔哩_小卡片广告@ddgksf2013
-^https://api.bilibili.com/pgc/season/player/cards reject-dict
-# ～ BiliBili_哔哩哔哩_点击追番Card@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/pgc\/season\/player\/ogv\/cards reject-dict
-# ～ BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
-^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default reject
-# ======= BiliJson 开屏及隐私 ======= #
-# ～ BiliBili_哔哩哔哩_屏蔽IP请求@ddgksf2013
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip reject
-# ～ BiliBili_哔哩哔哩_应用开屏去广告@bm7
-^https://app.bilibili.com/x/v2/splash/show reject-dict
-
+# 满意度调研
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
+# 开屏广告 //app.bilibili.com
+^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH reject-dict
+^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH reject-dict
+^https:\/\/(api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download)\? reject-dict
+# IP请求,地理位置请求 //api.bilibili.com
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
+^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
 
 [Script]
-# ======= BiliJson 播放页处理 ======= #
-# ～ BiliBili_哔哩哔哩_视频播放下方商品推广@ddgksf2013
-http-response ^https?:\/\/api\.bili(api|bili)\.(net|com)\/pgc\/season\/app\/related\/recommend\? script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 移除视频播放下方商品推广
+
+# Proto 动态广告,热门话题,播放页广告 //app.bilibili.com
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除动态页面广告
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除青少年模式
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$ url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除推荐页排行榜
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除播放页面视频列表广告
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除交互弹幕
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除评论区广告
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除搜索结果广告
+
+# 观影页,直播间商品广告浮窗,搜索框填充词,首页信息流,热搜发现,右上角活动,标签页
+http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body = true, binary-body-mode = true, tag = 移除观影页广告
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body = true, binary-body-mode = true, tag = 移除直播间广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body = true, binary-body-mode = true, tag = 移除热搜广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? url script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body = true, binary-body-mode = true, tag = 精简顶部标签
 
 
-# ======= BiliJson 直播间处理 ======= #
-# ～ BiliBili_哔哩哔哩_屏蔽直播间商品广告浮窗[还有一个域名]@ddgksf2013
-http-response ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 屏蔽直播间商品广告浮窗
-# ～ BiliBili_哔哩哔哩_直播去广告@bm7
-http-response ^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 直播去广告
-
-# ======= BiliJson 开屏及隐私 ======= #
-# ～ BiliBili_哔哩哔哩_应用开屏广告预加载@yjqiang
-http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/list script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 应用开屏广告预加载
-
-# ======= BiliJson Tab页处理 ======= #
-# ～ BiliBili_哔哩哔哩_屏蔽直播页顶部轮播图@ddgksf2013
-http-response ^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 屏蔽直播页顶部轮播图
-# ～ BiliBili_哔哩哔哩_推荐去广告@ddgksf2013
-http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 移除推荐去广告
-# ～ BiliBili_哔哩哔哩_追番去广告@ddgksf2013
-^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 移除追番去广告
-# ～ BiliBili_哔哩哔哩_观影页面去广告@ddgksf2013
-http-response ^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\? script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 移除观影页面去广告
-
-# ======= BiliJson 外观处理 ======= #
-# ～ BiliBili_哔哩哔哩_标签页处理@ddgksf2013
-http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 标签页处理
-# ～ BiliBili_哔哩哔哩_我的页面处理@ddgksf2013
-http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 我的页面处理
-# ～ BiliBili_哔哩哔哩_屏蔽首页右上活动@ddgksf2013
-http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 屏蔽首页右上活动
-# ～ BiliBili_哔哩哔哩_热搜发现@ddgksf2013
-http-response ^https:\/\/app\.bili(bili\.com|api\.net)\/x/v2\/search\/square script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_json.js, requires-body = true, tag = 屏蔽热搜发现
-
-# ======= BiliProto 处理 ======= #
-# ～ BiliBili_哔哩哔哩_搜索去广告@BiliUniverse
-http-response ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_proto_beta.js, requires-body = true, tag = 搜索去广告
-# ～ BiliBili_哔哩哔哩_交互点赞投票弹幕及会员弹幕@BiliUniverse
-http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile) script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_proto_beta.js, requires-body = true, tag = 屏蔽交互点赞投票弹幕及会员弹幕
-# ～ BiliBili_哔哩哔哩_青少年弹窗@BiliUniverse
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_proto_beta.js, requires-body = true, tag = 屏蔽青少年弹窗
-# ～ BiliBili_哔哩哔哩_UP主推荐广告[适配ipad端]@BiliUniverse
-http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo)$ script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_proto_beta.js, requires-body = true, tag = 去除UP主推荐广告
-# ～ BiliBili_哔哩哔哩_动态综合页及视频页去广告@BiliUniverse
-http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)$ script-path =https://raw.githubusercontent.com/linuszlx/JS/main/Bilibili/ddgk/bilibili_proto_beta.js, requires-body = true, tag = 动态综合页及视频页去广告
-
-[MitM]
-hostname = manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
+hostname = app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
