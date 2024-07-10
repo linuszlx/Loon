@@ -144,9 +144,6 @@ DOMAIN-SUFFIX,viacomcbspressexpress.com
 # >> CBS Radio
 DOMAIN-SUFFIX,cbsradio.com
 
-# > DW
-DOMAIN-SUFFIX,dw.com
-
 # >> Paramount
 USER-AGENT,PPlus*
 DOMAIN-SUFFIX,amlg.io
