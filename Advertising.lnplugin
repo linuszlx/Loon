@@ -129,10 +129,18 @@
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
 # > 飞客茶馆
 # hostname = 47.100.65.202, www.flyert.com, www.flyert.com.cn
+# 全局广告配置
+^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=advis reject
 ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis reject
 ^https?:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=advis.* reject
 ^https?:\/\/www\.flyert\.com\.cn\/source\/plugin\/mobile\/mobile\.php\?module=advis.* reject
-^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=advis.* reject
+# 我的页面 - 弹窗
+^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon reject-dict
+# 我的页面 - 悬浮窗
+^https:\/\/ptf\.flyertrip\.com\/static\/img\/common\/ic_plate_mine_button\.png reject-img
+# 发帖 - 横幅广告
+^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata reject-dict
+# 软件更新
 ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\.cn\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
