@@ -62,6 +62,7 @@
 # 开屏广告
 ^https?:\/\/img\.meituan\.net\/dpmobile\/[a-zA-Z0-9]{38}\.png\.webp$ reject-dict
 ^https?:\/\/img\.meituan\.net\/dpmobile\/[a-zA-Z0-9]{38}\.jpg\.webp$ reject-200
+^https?:\/\/img\.meituan\.net\/dpmobile\/[a-zA-Z0-9]{38}\.webp$ reject-200
 ^https?:\/\/img\.meituan\.net\/dpmobile\/.*.gif reject-200
 
 # > 动卡空间
