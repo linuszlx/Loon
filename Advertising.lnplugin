@@ -278,8 +278,7 @@
 
 # > 猫眼
 # hostname = p0.pipi.cn
-^https?:\/\/p0\.pipi\.cn\/adAdmin\/.+\.jpg\?imageMogr2\/quality\/85\?may_covertWebp reject-dict
-^https?:\/\/p0\.pipi\.cn\/adAdmin\/\w+.jpg\? reject-img
+^https:\/\/p0\.pipi\.cn\/adAdmin\/[A-Za-z0-9]+\.(jpg|png)\?imageMogr2\/(quality\/85\?may_covertWebp|thumbnail\/!165x165r%7CimageMogr2\/cut\/165x165x0x0\/gravity\/center)$ reject
 
 # > 芒果TV
 # hostname = ox.da.mgtv.com
