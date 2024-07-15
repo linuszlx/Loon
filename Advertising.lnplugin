@@ -240,6 +240,7 @@
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice reject-dict
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querytabfeedstream reject-200
 ^https?:\/\/gw\.alicdn\.com\/imgextra\/i\d\/\d+\/[A-Za-z0-9!_]+\.gif\?w=\d+&h=\d+&animation=gif reject
+^https?:\/\/gw\.alicdn\.com\/imgextra\/i\d+\/\d+\/[A-Za-z0-9]+\/[A-Za-z0-9_!]+-\d+-rexmedia\.jpg\?w=\d+&h=\d+ reject
 
 # >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
 # > 界面新闻
