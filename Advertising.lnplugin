@@ -281,6 +281,7 @@
 # hostname = p0.pipi.cn
 ^https?:\/\/p0\.pipi\.cn\/adAdmin\/.+\.jpg\?imageMogr2\/quality\/85\?may_covertWebp reject-dict
 ^https?:\/\/p0\.pipi\.cn\/adAdmin\/\w+.jpg\? reject-img
+^https?:\/\/p0\.pipi\.cn\/mediaplus\/maoyantong_ads_fe\/ reject-img
 
 # > 芒果TV
 # hostname = ox.da.mgtv.com
