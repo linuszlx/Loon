@@ -8,12 +8,12 @@
 #!date = 2024-07-17 18:20:06
 
 [Rule]
-DOMAIN, dpmtpush.dianping.com, reject
-DOMAIN, dynamicf.sankuai.com, reject
-DOMAIN-SUFFIX, lx.meituan.net, reject
-DOMAIN, tte.meituan.com, reject
-IP-CIDR, 101.32.16.204/32, reject
-IP-CIDR, 119.29.126.137/32, reject
+DOMAIN, dpmtpush.dianping.com,REJECT
+DOMAIN, dynamicf.sankuai.com,REJECT
+DOMAIN-SUFFIX, lx.meituan.net,REJECT
+DOMAIN, tte.meituan.com,REJECT
+IP-CIDR, 101.32.16.204/32,REJECT
+IP-CIDR, 119.29.126.137/32,REJECT
 
 [Rewrite]
 ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(indexopsmodules|loadsplashconfig) reject
