@@ -4,7 +4,7 @@
 #!author = zirawell
 #!keyword = 去广告
 #!homepage = 
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/AutoHome.png
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/dianping.png
 #!date = 2024-07-17 18:20:06
 
 [Rule]
@@ -33,9 +33,6 @@ IP-CIDR, 119.29.126.137/32, reject
 ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif reject-img
 ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/(mmp|ehc|titansx|ddblue)\/ reject
 ^https?:\/\/mars\.meituan\.com\/locate\/v\d\/sdk\/loc reject
-
-
-^https?:\/\/img\.meituan\.net\/dpmobile\/ url script-response-body https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/dianping.js
 
 [Script]
 http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path =https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/dianping.js, requires-body = true, tag = 开屏处理
