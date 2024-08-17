@@ -1,0 +1,15 @@
+#!name = RevenueCat
+#!desc = 破解RevenueCat各类App会员
+#!openUrl = 
+#!author = linusz
+#!homepage = https://github.com/linuszlx/Loon/main/RevenueCat.lnplugin
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/revenuecat-social-preview.png
+#!date = 2024-04-13
+
+[MitM]
+hostname = api.revenuecat.com
+
+[Script]
+# ～ RevenueCat@ddgksf2013
+http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true, max-size=-1, timeout=60, tag=RevenueCat
+http-request ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60, tag=RevenueCat
