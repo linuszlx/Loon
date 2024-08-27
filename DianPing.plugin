@@ -6,6 +6,7 @@
 #!homepage = 
 #!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/dianping.png
 #!date = 2024-08-08 18:20:06
+#!tag = 去广告
 
 [Rule]
 DOMAIN, dpmtpush.dianping.com,REJECT
