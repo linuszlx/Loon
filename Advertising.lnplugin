@@ -5,6 +5,7 @@
 #!homepage = https://github.com/linuszlx/Loon/main/Advertising.lnplugin
 #!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Adblocker.webp
 #!date = 2024-01-23
+#!tag = 去广告
 
 [Rewrite]
 [URL Rewrite]
