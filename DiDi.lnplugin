@@ -5,6 +5,7 @@
 #!homepage = 
 #!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Didi.webp
 #!date = 2024-01-23
+#!tag = 去广告
 
 [Rule]
 IP-CIDR,139.199.240.12/32,REJECT
