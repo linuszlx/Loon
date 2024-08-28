@@ -483,6 +483,19 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal reject
 # hostname = home.mi.com
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab)\? reject-dict
 
+# > 闲鱼
+ # hostname = gw.alicdn.com, heic.alicdn.com, asp.cntv.myalicdn.com
+ ^https?:\/\/gw\.alicdn\.com\/tfs\/.+?\d{4}-\d{4}\/[a-z]{3}$ reject-200
+ ^https?:\/\/gw\.alicdn\.com\/tfs\/TB1.+?750-\d{4} reject-200
+ ^https?:\/\/heic\.alicdn\.com\/tps\/i4\/.+?\.jpg_1200x1200q90\.jpg_\.heic$ reject-200
+ ^https?:\/\/asp\.cntv\.myalicdn\.com\/.+?\?maxbr=850 reject-200
+ ^https?:\/\/(?>heic|gw)\.alicdn\.com\/tfs\/TB1.+?-\d{4}-\d{4}\.jpg_1200x1200q90\.jpg_\.\w{3,4}$ reject-200
+ ^https?:\/\/(gw|heic)\.alicdn\.com\/\w{2}s\/[\w\/.-]+\.jpg_(9\d{2}|\d{4}) reject
+ ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ reject
+ ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_(9\d{2}|\d{4}) reject
+ ^https?:\/\/gw\.alicdn\.com\/mt\/ reject
+ ^https?:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+ ^https?:\/\/(gw|img)\.alicdn\.com\/imgextra\/.+\/[\w!]+\d+-\d+-.+-\b([8-9]\d{2,}|[1-9]\d{3,})\b-\b([5-9]\d{2,}|[1-9]\d{3,})\b url reject-dict
 
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
 # > 云闪付
