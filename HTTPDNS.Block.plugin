@@ -4,7 +4,7 @@
 #!homepage=
 #!icon=https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/dns-logo.jpg
 #!category=
-#!tag = 去广告
+#!tag = 辅助工具
 
 [General]
 force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
