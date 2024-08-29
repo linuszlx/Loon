@@ -5,6 +5,10 @@
 #!homepage = 
 #!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Block.webp
 #!date = 2024-02-19 20:05:06
+#!tag = 辅助工具
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(745)
 
 [Rule]
 DOMAIN,mesu.apple.com,REJECT
