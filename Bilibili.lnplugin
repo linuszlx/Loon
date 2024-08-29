@@ -7,6 +7,10 @@
 #!manual=https://manual.biliuniverse.io
 #!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_rounded.png
 #!date = 2024-03-28
+#!tag = 去广告
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(745)
 
 [Rewrite]
 # 去除搜索中的默认关键词
