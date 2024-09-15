@@ -230,7 +230,7 @@
 # > 航旅纵横
 # > hostname = umerp.umetrip.com, umerp.umetrip.com.cn, home.umetrip.com, bkclient.umetrip.com.cn, discardrp.umetrip.com, startup.umetrip.com, oss.umetrip.com
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native reject
-^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite url reject-dict
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite reject-dict
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
