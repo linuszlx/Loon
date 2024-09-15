@@ -609,7 +609,7 @@ http-response ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview requires-body=1,script-pat
 
 # > 航旅纵横
 # > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
-http-response ^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$ script-path = https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, tag = 移除首页广告
+http-response ^https?:\/\/discardrp.umetrip\.com\.cn\/gateway\/api\/umetrip\/native$ script-path = https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, tag = 移除首页广告
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # KFC
