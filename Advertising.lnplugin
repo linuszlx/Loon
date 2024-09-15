@@ -230,9 +230,9 @@
 # > 航旅纵横
 # > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
 ^https?:\/\/startup\.umetrip\.com\/gateway\/api\/umetrip\/native reject-200
-^http:\/\/oss\.umetrip\.com\/fs\/advert\/ reject
-^http:\/\/oss\.umetrip\.com\/fs\/pos\/static reject
-^http:\/\/oss\.umetrip\.com\/fs\/equityCenter\/static reject
+#^http:\/\/oss\.umetrip\.com\/fs\/advert\/ reject
+#^http:\/\/oss\.umetrip\.com\/fs\/pos\/static reject
+#^http:\/\/oss\.umetrip\.com\/fs\/equityCenter\/static reject
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
