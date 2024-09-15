@@ -229,8 +229,7 @@
 
 # > 航旅纵横
 # > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
-^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native url reject-200
-^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$ url script-response-header https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
+^https?:\/\/startup\.umetrip\.com\/gateway\/api\/umetrip\/native url reject-200
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
