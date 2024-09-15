@@ -229,14 +229,8 @@
 
 # > 航旅纵横
 # > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
-^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native reject
-^http?:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
-^https?:\/\/discardrp\.umetrip\.com\/gateway\/api\/umetrip\/native reject-200
-^https?:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
-^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native reject
-^http:\/\/oss\.umetrip\.com\/fs\/advert\/ reject
-^http:\/\/oss\.umetrip\.com\/fs\/pos\/static reject
-^http:\/\/oss\.umetrip\.com\/fs\/equityCenter\/static reject
+^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native url reject-200
+^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$ url script-response-header https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
@@ -613,6 +607,10 @@ http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.re
 http-response ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads requires-body=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,tag=快手、穿山甲去广告
 http-response ^https?:\/\/is.snssdk.com/api/ad/union/sdk requires-body=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,tag=快手、穿山甲去广告
 http-response ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview requires-body=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,tag=快手、穿山甲去广告
+
+# > 航旅纵横
+# > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
+http-response ^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$ script-path = https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, tag = 移除首页广告
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # KFC
