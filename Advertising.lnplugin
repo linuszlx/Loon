@@ -7,6 +7,9 @@
 #!date = 2024-01-23
 #!tag = 去广告
 
+[Rule]
+DOMAIN, static.umetrip.com, REJECT
+
 [Rewrite]
 [URL Rewrite]
 # >>>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<
