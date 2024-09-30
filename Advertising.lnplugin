@@ -608,10 +608,6 @@ http-response ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\
 http-response ^https?:\/\/is.snssdk.com/api/ad/union/sdk requires-body=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,tag=快手、穿山甲去广告
 http-response ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview requires-body=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,tag=快手、穿山甲去广告
 
-# > 航旅纵横
-# > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
-#http-response ^https?:\/\/(umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path = https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/umetrip.js, tag = 移除首页广告
-
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # KFC
 # hostname = abplatform.yumchina.com,res.kfc.com.cn
