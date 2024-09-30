@@ -610,7 +610,7 @@ http-response ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview requires-body=1,script-pat
 
 # > 航旅纵横
 # > hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com,
-http-response ^https?:\/\/(umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path = https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/umetrip.js, tag = 移除首页广告
+#http-response ^https?:\/\/(umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path = https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/umetrip.js, tag = 移除首页广告
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # KFC
