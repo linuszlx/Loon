@@ -62,6 +62,10 @@
 ^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-1125-2436.jpg reject-200
 ^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-1125-2436.jpg reject-200
 ^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-1125-2436.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i1\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-900-1350.jpg reject-200
 
 # > 大众点评
 # hostname = img.meituan.net
