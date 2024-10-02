@@ -156,6 +156,10 @@
 ^https?:\/\/www\.flyert\.com\/api\/mobile\/index\.php\?module=basicdata&type=appinfo reject
 ^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/source\/plugin\/mobile\/mobile\.php\?module=basicdata&type=appinfo reject
 
+# > 飞猪
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.(popresource|screen) reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.guide\.guess\.what\.you\.like reject
+
 # > 发现精彩
 # hostname = static.95508.com
 # 开屏广告
@@ -607,6 +611,9 @@ http-response ^https?:\/\/www\.flyert\.com\.cn\/source\/plugin\/mobile\/mobile\.
 http-response ^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5&mobile=yes&module=basicdata&type=forumlist requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/FlyTea/FlyTea_AS.js,tag=飞客去帖子广告
 http-response ^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1 requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/FlyTea/FlyTea_AD.js,tag=飞客去目录广告
 http-response ^https?:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5&mobile=yes&module=basicdata&type=forumlist requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/FlyTea/FlyTea_AS.js,tag=飞客去帖子广告
+
+# > 飞猪
+http-response ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.ssif\.pattern\.home requires-body=1,script-path=https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/fliggy.js,tag=飞猪去广告
 
 
 # >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
