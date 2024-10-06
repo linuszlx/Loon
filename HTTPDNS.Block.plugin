@@ -15,6 +15,38 @@ force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.c
 
 
 [Rule]
+# 阿里巴巴
+DOMAIN, dns.alidns.com, REJECT
+DOMAIN, httpdns.alicdn.com, REJECT
+
+# 阿里云
+DOMAIN, httpdns-api.aliyuncs.com, REJECT
+DOMAIN, httpdns-sc.aliyuncs.com, REJECT
+IP-CIDR, 203.107.1.0/24, REJECT, no-resolve
+
+# 哔哩哔哩
+DOMAIN, httpdns.bilivideo.com, REJECT
+# KEY_EXT_P2P_HTTPDNS_BILI_IP
+URL-REGEX, ^http:\/\/47\.101\.175\.206\/resolve, REJECT
+URL-REGEX, ^http:\/\/47\.100\.123\.169\/resolve, REJECT
+URL-REGEX, ^http:\/\/120\.46\.169\.234\/resolve, REJECT
+URL-REGEX, ^http:\/\/121\.36\.72\.124\/resolve, REJECT
+# KEY_EXT_P2P_BILIDNS_CMCC_IP
+URL-REGEX, ^http:\/\/116\.63\.10\.135\/resolve, REJECT
+URL-REGEX, ^http:\/\/117\.185\.228\.108\/resolve, REJECT
+URL-REGEX, ^http:\/\/117\.144\.238\.29\/resolve, REJECT
+URL-REGEX, ^http:\/\/122\.9\.7\.134\/resolve, REJECT
+# KEY_EXT_P2P_BILIDNS_CT_IP
+URL-REGEX, ^http:\/\/101\.91\.140\.124\/resolve, REJECT
+URL-REGEX, ^http:\/\/101\.91\.140\.224\/resolve, REJECT
+URL-REGEX, ^http:\/\/122\.9\.13\.79\/resolve, REJECT
+URL-REGEX, ^http:\/\/122\.9\.15\.129\/resolve, REJECT
+# KEY_EXT_P2P_BILIDNS_CU_IP
+URL-REGEX, ^http:\/\/112\.65\.200\.117\/resolve, REJECT
+URL-REGEX, ^http:\/\/112\.64\.218\.119\/resolve, REJECT
+URL-REGEX, ^http:\/\/114\.116\.215\.110\/resolve, REJECT
+URL-REGEX, ^http:\/\/116\.63\.10\.31\/resolve, REJECT
+
 # YY语音
 DOMAIN, yyapp-httpdns.gslb.yy.com, REJECT
 DOMAIN, union-httpdns.gslb.yy.com, REJECT
@@ -95,41 +127,9 @@ IP-CIDR6, 2409:8702:4860:10::4d/128, REJECT, no-resolve
 DOMAIN, httpdns.kg.qq.com, REJECT
 URL-REGEX, ^http:\/\/182\.256\.116\.116\/d, REJECT
 
-# 哔哩哔哩
-DOMAIN, httpdns.bilivideo.com, REJECT
-# KEY_EXT_P2P_HTTPDNS_BILI_IP
-URL-REGEX, ^http:\/\/47\.101\.175\.206\/resolve, REJECT
-URL-REGEX, ^http:\/\/47\.100\.123\.169\/resolve, REJECT
-URL-REGEX, ^http:\/\/120\.46\.169\.234\/resolve, REJECT
-URL-REGEX, ^http:\/\/121\.36\.72\.124\/resolve, REJECT
-# KEY_EXT_P2P_BILIDNS_CMCC_IP
-URL-REGEX, ^http:\/\/116\.63\.10\.135\/resolve, REJECT
-URL-REGEX, ^http:\/\/117\.185\.228\.108\/resolve, REJECT
-URL-REGEX, ^http:\/\/117\.144\.238\.29\/resolve, REJECT
-URL-REGEX, ^http:\/\/122\.9\.7\.134\/resolve, REJECT
-# KEY_EXT_P2P_BILIDNS_CT_IP
-URL-REGEX, ^http:\/\/101\.91\.140\.124\/resolve, REJECT
-URL-REGEX, ^http:\/\/101\.91\.140\.224\/resolve, REJECT
-URL-REGEX, ^http:\/\/122\.9\.13\.79\/resolve, REJECT
-URL-REGEX, ^http:\/\/122\.9\.15\.129\/resolve, REJECT
-# KEY_EXT_P2P_BILIDNS_CU_IP
-URL-REGEX, ^http:\/\/112\.65\.200\.117\/resolve, REJECT
-URL-REGEX, ^http:\/\/112\.64\.218\.119\/resolve, REJECT
-URL-REGEX, ^http:\/\/114\.116\.215\.110\/resolve, REJECT
-URL-REGEX, ^http:\/\/116\.63\.10\.31\/resolve, REJECT
-
 # 小米
 DOMAIN, httpdns.browser.miui.com, REJECT
 DOMAIN, resolver.msg.xiaomi.net, REJECT
-
-# 阿里巴巴
-DOMAIN, dns.alidns.com, REJECT
-DOMAIN, httpdns.alicdn.com, REJECT
-
-# 阿里云
-DOMAIN, httpdns-api.aliyuncs.com, REJECT
-DOMAIN, httpdns-sc.aliyuncs.com, REJECT
-IP-CIDR, 203.107.1.0/24, REJECT, no-resolve
 
 # 淘宝
 DOMAIN, httpdns.danuoyi.tbcache.com, REJECT
@@ -268,10 +268,6 @@ DOMAIN, hd.xiaojukeji.com, REJECT
 ^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
 ^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
 
-# Baidu
-^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
-^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
-
 # 腾讯DNS
 ^https?:\/\/119\.29\.29\.29\/d reject
 
@@ -291,30 +287,7 @@ DOMAIN, hd.xiaojukeji.com, REJECT
 ^https?:\/\/amdc\.alipay\.com\/query
 
 # JD
-^https:\/\/dns\.jd\.com\/v6\/b - reject
-
-# Meituan
-^http:\/\/103\.37\.155\.60\/fetch - reject
-
-# Pinduoduo
-^http:\/\/101\.35\.204\.35\/d - reject
-^http:\/\/101\.35\.212\.35\/d - reject
-^http:\/\/114\.110\.96\.26\/d - reject
-^http:\/\/114\.110\.97\.97\/d - reject
-
-# QCloud
-# refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
-# refer: https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
-# refer: https://cloud.tencent.com/document/product/379/61200
-^https?:\/\/119\.29\.29\.29\/d - reject
-
-# QQmusic
-^http:\/\/182\.256\.116\.116\/d - reject
-
-# Weibo
-# refer: https://github.com/CNSRE/HTTPDNSLib-for-iOS
-^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
-^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
+^https:\/\/dns\.jd\.com\/v6\/b reject
 
 # 百度网盘
 ^https?:\/\/180\.76\.76\.200\/v\d\/resolve reject
