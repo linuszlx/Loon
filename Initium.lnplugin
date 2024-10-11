@@ -1,0 +1,16 @@
+#!name=端传媒
+#!desc=解锁手机APP端和网页端文章阅读权限
+#!author=𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
+#!tips=无需登录，直接打开文章观看
+#!tgchannel=https://t.me/ddgksf2021
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Initium.png
+#!date = 2024-10-10
+#!tag = 破解插件
+
+[Script]
+# ～ Duan@ddgksf2013
+http-response ^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription script-path=https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body=true, max-size=-1, timeout=60, tag=端传媒破解1
+http-response ^https?:\/\/api\.wallkit\.net\/api\/v\d/user script-path=https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body=true, max-size=-1, timeout=60, tag=端传媒破解1
+
+[MITM]
+hostname = app.theinitium.com, api.wallkit.net
