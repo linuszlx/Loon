@@ -1,8 +1,8 @@
 #!name = 哔哩哔哩
 #!desc = 没有广告的哔哩哔哩更值得干杯
-#!author = RuCu6 Maasea
+#!author = Maasea[https://github.com/Maasea], RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], 可莉🅥[https://gitlab.com/lodepuly/vpn_tool]
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Bilibili.png
-#!update = 2024-08-27 16:05
+#!update = 2024-10-15 16:05
 #!tag = 去广告
 
 [Rewrite]
@@ -31,7 +31,7 @@
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除动态页面广告
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除青少年模式
 http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除推荐页排行榜
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除播放页面视频列表广告
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:view|viewunite)\.v1\.View\/(?:View|ViewProgress)$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除播放页面视频列表广告
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除交互弹幕
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除评论区广告
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 移除搜索结果广告
