@@ -14,10 +14,10 @@ hostname = note.youdao.com, p.du.163.com, lanfanapp.com, 114*0.*,61.172.1*.*,43.
 # > 01 有道云笔记
 http-response https://note.youdao.com/yws/(mapi/payment|api/self) script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Crack/ydybj.js, requires-body=true, timeout=10, tag=有道云笔记
 # > 02 蜗牛读书
-http-response ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json script-path=https://raw.githubusercontent.com/deezertidal/private/main/wnds.js, requires-body=true, timeout=10, tag=蜗牛读书
+http-response ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Crack/wnds.js, requires-body=true, timeout=10, tag=蜗牛读书
 # > 03 懒饭
 http-response ^https:\/\/lanfanapp.com\/api\/v1\/user\/(prime.json|page_detail.json) script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Crack/lanfan.js, requires-body=true, timeout=10, tag=懒饭
 # > 04 喜马拉雅,会员,音效&音质
-http-response ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts).*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/xmly.js, requires-body=true, timeout=10, tag=喜马拉雅
-http-request ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/xmck.js, requires-body=true, timeout=10, tag=喜马拉雅
+http-response ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts).*$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/XMLY/xmly.js, requires-body=true, timeout=10, tag=喜马拉雅
+http-request ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/XMLY/xmly.js, requires-body=true, timeout=10, tag=喜马拉雅
 
