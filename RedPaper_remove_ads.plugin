@@ -1,5 +1,5 @@
 #!name = 小红书去广告
-#!desc = 过滤信息流推广，移除图片及视频水印，如有异常，请先清除缓存再尝试。
+#!desc = 过滤信息流推广，移除图片及视频水印。
 #!openUrl =
 #!author = RuCu6[https://github.com/RuCu6], fmz200[https://github.com/fmz200]
 #!tag = 去广告
