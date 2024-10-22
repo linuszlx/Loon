@@ -1,5 +1,5 @@
 #!name = TikTok解锁
-#!desc = 移除TikTok视频水印并自定义解锁地区，需要配置此插件至对应地区的节点。
+#!desc = 移除TikTok视频水印并自定义解锁地区。
 #!openUrl = 
 #!author = Keywos[https://github.com/Keywos]
 #!tag = 功能增强
