@@ -1,13 +1,12 @@
 #!name = 自动加入TestFlight
 #!desc = 自动监控TestFlight名额，一旦有新的名额即刻加入。
-#!openUrl = https://apps.apple.com/app/id899247664
 #!author = DecoAri[https://github.com/DecoAri], xream[https://github.com/xream]
 #!tag = 定时任务
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TestFlight.png
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/TestFlight.png
 #!input = APP_ID
 #!date = 2024-10-22 00:22:37
 
@@ -20,11 +19,11 @@ TimingParameters = input, "*/1 * * * * *", tag = 定时参数, desc = 这里需�
 DOMAIN, testflight.apple.com, PROXY
 
 [Script]
-http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path = https://kelee.one/Resource/Script/TestFlight/TF_keys.js, tag = 获取账号令牌, enable={CaptureAccountToken}
+http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path = https://raw.githubusercontent.com/linuszlx/JS/main/TestFlight/TF_keys.js, tag = 获取账号令牌, enable={CaptureAccountToken}
 
-http-request ^https://testflight.apple.com/join/(.*) script-path = https://kelee.one/Resource/Script/TestFlight/TF_keys.js, tag = 应用ID捕获, enable={CaptureAppID}
+http-request ^https://testflight.apple.com/join/(.*) script-path = https://raw.githubusercontent.com/linuszlx/JS/main/TestFlight/TF_keys.js, tag = 应用ID捕获, enable={CaptureAppID}
 
-cron {TimingParameters} script-path = https://kelee.one/Resource/Script/TestFlight/Auto_join_TF.js, tag = 自动加入TF, timeout = 180
+cron {TimingParameters} script-path = https://raw.githubusercontent.com/linuszlx/JS/main/TestFlight/Auto_join_TF.js, tag = 自动加入TF, timeout = 180
 
 [MitM]
 hostname = testflight.apple.com
