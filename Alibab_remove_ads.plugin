@@ -1,0 +1,106 @@
+#!name = 阿里系去广告
+#!desc = 过滤阿里系开屏广告
+#!openUrl = 
+#!author = RuCu6
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
+#!icon = https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Ali.png
+#!date = 2024-01-25 18:00:54
+
+[Rule]
+DOMAIN, adashx.m.taobao.com, REJECT
+DOMAIN, ossgw.alicdn.com, REJECT
+DOMAIN, ems.youku.com, REJECT
+DOMAIN, hudong.alicdn.com, REJECT
+DOMAIN, h-adashx.ut.taobao.com, REJECT
+DOMAIN, ut.taobao.com, REJECT
+# 盒马
+AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Hema4iPhone*)), REJECT
+# 饿了么
+AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, eleme*)), REJECT
+# 飞猪旅行
+#AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C*)), REJECT
+# 一淘
+AND,((USER-AGENT,ishare4iphone*),(URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch)),REJECT
+
+AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E5%96%B5%E8%A1%97*)), REJECT
+AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E5%A4%A9%E7%8C%AB*)), REJECT
+AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Alibaba*)), REJECT
+AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Moon*)), REJECT
+AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, DMPortal*)), REJECT
+
+[Rewrite]
+# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+^http://59.82.113.39:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.113.117:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.113.10:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.14.1:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.113.219:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+# > Alibaba
+# hostname = acs.m.taobao.com, amdc.m.taobao.com
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ reject
+# > 大麦
+# hostname = acs.m.taobao.com, img.alicdn.com
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome reject-200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i1\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-1080-1920.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i1\/.*-tps-1125-2436.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-1125-2436.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-1125-2436.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-1125-2436.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i1\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i2\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i3\/.*-tps-900-1350.jpg reject-200
+^https?:\/\/img\.alicdn\.com\/imgextra\/i4\/.*-tps-900-1350.jpg reject-200
+# > 饿了么
+# hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+^https?:\/\/elemecdn\.com\/.+\/sitemap reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 reject-img
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? reject
+^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ reject
+^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) reject
+# > 飞猪
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.(popresource|screen) reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.guide\.guess\.what\.you\.like reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources reject-dict
+# > 盒马
+# hostname = acs.m.taobao.com, acs-m.freshippo.com, gw.alicdn.com
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info reject
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage reject-200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querytabfeedstream reject-200
+^https?:\/\/gw\.alicdn\.com\/imgextra\/i\d\/\d+\/[A-Za-z0-9!_]+\.gif\?w=\d+&h=\d+&animation=gif reject
+^https?:\/\/gw\.alicdn\.com\/imgextra\/i\d+\/\d+\/[A-Za-z0-9]+\/[A-Za-z0-9_!]+-\d+-rexmedia\.jpg\?w=\d+&h=\d+ reject
+# > 一淘
+# hostname = acs.m.taobao.com
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject
+# > 其他
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject-dict
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 reject-dict
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jpg|png)_(?:1\d{3}|9\d{2})x(?:1\d{3}|9\d{2})q[59]0 reject-dict
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) reject-dict
+
+
+[Script]
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Taobao/Taobao_remove_ads.js, requires-body = true, tag = 移除淘宝开屏广告
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path = https://raw.githubusercontent.com/linuszlx/JS/main/Taobao/Taobao_remove_ads.js, requires-body = true, tag = 移除淘宝开屏广告
+http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(index|my)page requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/Freshippo/Freshippo.js,tag=盒马去广告
+[Mitm]
+hostname = acs.m.taobao.com, amdc.m.taobao.com, img.alicdn.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, acs-m.freshippo.com, gw.alicdn.com
