@@ -31,8 +31,9 @@ AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AG
 AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, DMPortal*)), REJECT
 
 [Rewrite]
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# 阿里巴巴 
 ^http://59.82.113.39:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.113.252:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.113.117:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.113.10:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.14.1:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
@@ -88,6 +89,7 @@ AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AG
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject
 # > 其他
+# hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit reject-dict
