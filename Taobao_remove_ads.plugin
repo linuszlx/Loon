@@ -31,6 +31,7 @@ AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AG
 [Rewrite]
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^http://59.82.113.39:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59.82.113.117:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.113.10:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.14.1:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59.82.113.219:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
