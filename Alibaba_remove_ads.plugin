@@ -21,6 +21,8 @@ AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-A
 #AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C*)), REJECT
 # 一淘
 AND,((USER-AGENT,ishare4iphone*),(URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch)),REJECT
+# 饿了么
+AND, ((URL-REGEX, ^http:\/\/amdc\.m\.ele\.me\/amdc\/mobileDispatch), (USER-AGENT, eleme*)), REJECT
 
 AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E5%96%B5%E8%A1%97*)), REJECT
 AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E5%A4%A9%E7%8C%AB*)), REJECT
