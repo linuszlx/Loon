@@ -7,10 +7,6 @@
 #!date = 2024-01-23
 #!tag = 去广告
 
-[Rule]
-# 饿了么
-AND, ((URL-REGEX, ^http:\/\/amdc\.m\.ele\.me\/amdc\/mobileDispatch), (USER-AGENT, eleme*)), REJECT
-
 [Rewrite]
 [URL Rewrite]
 # >>>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<
