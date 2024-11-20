@@ -31,6 +31,7 @@ AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AG
 
 [Rewrite]
 # 阿里巴巴 
+^http://59\.82\.(113|14)\.\d{1,3}/amdc/mobileDispatch\?appkey=21380790 reject-dict
 ^http://59\.82\.(113|14)\.\d{1,3}:80/amdc/mobileDispatch\?appkey=21380790 reject-dict
 
 # > Alibaba
