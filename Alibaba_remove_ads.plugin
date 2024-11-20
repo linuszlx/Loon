@@ -31,12 +31,8 @@ AND,((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AG
 
 [Rewrite]
 # 阿里巴巴 
-^http://59.82.113.39:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
-^http://59.82.113.252:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
-^http://59.82.113.117:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
-^http://59.82.113.10:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
-^http://59.82.14.1:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
-^http://59.82.113.219:80\/amdc\/mobileDispatch\?appkey=21380790 reject-dict
+^http://59\.82\.(113|14)\.\d{1,3}:80/amdc/mobileDispatch\?appkey=21380790 reject-dict
+
 # > Alibaba
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ reject
