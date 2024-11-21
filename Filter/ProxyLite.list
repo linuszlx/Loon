@@ -197,6 +197,9 @@ DOMAIN-SUFFIX,anthropic.com
 # > DW
 DOMAIN-SUFFIX,dw.com
 
+# > duan
+DOMAIN-SUFFIX,theinitium.com
+
 # Developer 开发者常用国外网站、镜像和论坛
 DOMAIN-SUFFIX,apache.org
 DOMAIN-SUFFIX,docker.com
