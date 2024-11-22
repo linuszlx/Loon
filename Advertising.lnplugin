@@ -207,7 +207,7 @@
 #^https?:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject
 ^https?:\/\/bkclient\.umetrip\.com\.cn\/gateway\/api\/umetrip\/native reject
 ^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite reject-dict
-^https?:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+#^https?:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
 
 # >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
 # > 界面新闻
