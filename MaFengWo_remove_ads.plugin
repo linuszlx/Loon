@@ -42,5 +42,11 @@ DOMAIN,sdk.push.mob.com,REJECT
 # 我的 - 打卡成就勋章弹窗
 ^https:\/\/mapi\.mafengwo\.cn\/user\/growth\/get_growth_tip\/v1\? reject-dict
 
+^https?:\/\/mapi\.mafengwo\.cn\/(travelguide\/)?ad url reject
+^https?:\/\/mapi\.mafengwo\.cn\/widget\/note\/get_widget_note url reject
+^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update url reject-dict
+^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config url reject-dict
+^https?:\/\/mapi\.mafengwo\.cn\/system\/push\/get_local_push_config url reject
+
 [MitM]
 hostname=mapi.mafengwo.cn
