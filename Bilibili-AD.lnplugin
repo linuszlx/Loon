@@ -7,7 +7,7 @@
 
 
 [Argument]
-showUpList = select, true, false, auto, tag = 动态最常访问, desc = 是否隐藏最常访问
+showUpList = select, "true", "false", "auto", tag = 动态最常访问, desc = 是否隐藏最常访问
 
 [Rule]
 # 开屏广告
