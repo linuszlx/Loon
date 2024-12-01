@@ -5,7 +5,6 @@
 #!update = 2024-10-15 16:05
 #!tag = 去广告
 
-
 [Argument]
 showUpList = select, "true", "false", "auto", tag = 动态最常访问, desc = 是否隐藏最常访问
 
@@ -13,6 +12,7 @@ showUpList = select, "true", "false", "auto", tag = 动态最常访问, desc = �
 # 开屏广告
 URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-DICT
 URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
+
 [Rewrite]
 # 满意度调研
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
@@ -30,6 +30,8 @@ URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
 ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/skin\? response-body-json-del data.common_equip
 # 移除右上角活动入口
 ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity\? mock-response-body data-type=json status-code=200 data="{ "code": -404, "message": "啥都木有", "ttl": 1, "data": null }"
+
+[Body Rewrite]
 #移除观影页广告
 http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab\?) '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
 #移除首页广告
