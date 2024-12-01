@@ -26,7 +26,8 @@ AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, UDP)), REJECT
 
 [Script]
 # YouTube去广告
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/linuszlx/JS/refs/heads/main/Youtube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube响应
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/linuszlx/JS/refs/heads/main/Youtube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = youtube_ads, argument = [{blockUpload},{blockImmersive},{debug},{captionLang},{lyricLang}]
+
 
 [MitM]
 hostname = rr*.googlevideo.com, youtu.be, youtubei.googleapis.com
