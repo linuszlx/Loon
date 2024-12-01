@@ -15,18 +15,18 @@ lyricLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 歌词�
 debug = switch, false, true, tag = 启用调试模式, desc = 此插件的调试模式
 
 [Rule]
-AND, ((DOMAIN-SUFFIX, googlevideo.com),  (PROTOCOL, QUIC)), REJECT
-AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com),  (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN, youtubei.googleapis.com), (PROTOCOL, UDP)), REJECT
+AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, UDP)), REJECT
 
 [Rewrite]
-# 使用reject-dict方法以减少开销
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-dict
+# loon 专用写法
+^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? mock-response-body data-type=text status-code=502
+# youtube 短链移除追踪参数
+(^https:\/\/youtu\.be\/[\w-]+)(?:\?si=\w+) 302 $1
 
 [Script]
 # YouTube去广告
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://raw.githubusercontent.com/linuszlx/JS/refs/heads/main/Youtube/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube请求
-
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/linuszlx/JS/refs/heads/main/Youtube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube响应
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/linuszlx/JS/refs/heads/main/Youtube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube响应
 
 [MitM]
-hostname = *.googlevideo.com, youtubei.googleapis.com
+hostname = rr*.googlevideo.com, youtu.be, youtubei.googleapis.com
