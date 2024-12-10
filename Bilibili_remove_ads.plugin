@@ -5,10 +5,6 @@
 #!update = 2024-12-08 16:05
 #!tag = 去广告
 
-
-
-https://raw.githubusercontent.com/linuszlx/Loon/main/Logo/Adblocker.webp
-
 [Argument]
 showUpList = select,"auto","true","false",tag=动态最常访问,desc=auto: 仅当列表中存在直播状态时显示; true: 始终显示; false: 始终隐藏;
 
