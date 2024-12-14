@@ -7,8 +7,6 @@
 #!date = 2024-01-23
 #!tag = 去广告
 
-[Rule]
-DOMAIN,ad.12306.cn,DIRECT
 
 [Rewrite]
 [URL Rewrite]
