@@ -7,6 +7,9 @@
 #!date = 2024-01-23
 #!tag = 去广告
 
+[Rule]
+DOMAIN,ad.12306.cn,DIRECT
+
 
 [Rewrite]
 [URL Rewrite]
@@ -542,7 +545,8 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal reject
 # >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
 # > 12306
 # hostname = ad.12306.cn
-http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ requires-body=1,script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306.js,tag=12306去广告
+http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306.js,requires-body=true,tag=移除12306开屏广告
+http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306.js,tag=移除12306应用内广告
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
