@@ -16,21 +16,21 @@ DOMAIN, tte.meituan.com,REJECT
 IP-CIDR, 101.32.16.204/32,REJECT
 IP-CIDR, 119.29.126.137/32,REJECT
 
-IP-CIDR, 103.37.155.60/32, reject
-DOMAIN, flowplus.meituan.net, reject
-DOMAIN, lx0.meituan.com, reject
-DOMAIN, hlx.meituan.com, reject
-DOMAIN-SUFFIX, lx.meituan.net, reject
-DOMAIN-SUFFIX, httpdns.meituan.com, reject
-DOMAIN-SUFFIX, analytics.meituan.net, reject
-DOMAIN-SUFFIX, meituan.xn, reject
-DOMAIN-SUFFIX, meituan.yoga, reject
-DOMAIN-SUFFIX, meituangov.cn, reject
-DOMAIN-SUFFIX, wmlog.meituan.com, reject
-DOMAIN-SUFFIX, ad.e.waimai.sankuai.com, reject
-DOMAIN-SUFFIX, mads.meituan.com, reject
-DOMAIN-SUFFIX, d.meituan.net, reject
-DOMAIN-keyword, report.meituan, reject
+IP-CIDR, 103.37.155.60/32, REJECT
+DOMAIN, flowplus.meituan.net, REJECT
+DOMAIN, lx0.meituan.com, REJECT
+DOMAIN, hlx.meituan.com, REJECT
+DOMAIN-SUFFIX, lx.meituan.net, REJECT
+DOMAIN-SUFFIX, httpdns.meituan.com, REJECT
+DOMAIN-SUFFIX, analytics.meituan.net, REJECT
+DOMAIN-SUFFIX, meituan.xn, REJECT
+DOMAIN-SUFFIX, meituan.yoga, REJECT
+DOMAIN-SUFFIX, meituangov.cn, REJECT
+DOMAIN-SUFFIX, wmlog.meituan.com, REJECT
+DOMAIN-SUFFIX, ad.e.waimai.sankuai.com, REJECT
+DOMAIN-SUFFIX, mads.meituan.com, REJECT
+DOMAIN-SUFFIX, d.meituan.net, REJECT
+DOMAIN-keyword, report.meituan, REJECT
 
 
 
