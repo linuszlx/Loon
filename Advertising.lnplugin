@@ -546,7 +546,7 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal reject
 # > 12306
 # hostname = ad.12306.cn, mobile.12306.cn
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306.js,requires-body=true,tag=移除12306开屏广告
-http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306.js,tag=移除12306应用内广告
+http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://raw.githubusercontent.com/linuszlx/JS/main/12306/12306_remove_ads.js,tag=移除12306应用内广告
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
